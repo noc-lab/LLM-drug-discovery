@@ -14,10 +14,10 @@ def check_patterns(patterns, sentence):
 
 def map_text_to_label_cot_string(text):
     YES_PATTERNS = [re.compile(pattern, re.IGNORECASE) for pattern in [r"\byes\b", r"\bdoes\b(?! not)"]]
-    
+
     NO_PATTERNS = [re.compile(pattern, re.IGNORECASE) for pattern in
                    [r"\bno\b", r"\bdoes not\b", r"\bdoesn't\b", r"\bnot\b"]]
-    
+
     NOT_SURE_PATTERNS = [re.compile(pattern, re.IGNORECASE) for pattern in
                          [r"\binsufficient\b", r"\bunclear\b", r"\binconclusive\b", r"\bpartial\b", r"\bimpossible\b", r"\bindeterminate\b"]]
 
@@ -72,7 +72,7 @@ def map_text_to_label_cot_string(text):
         return LABEL_CONTRADICT
     else:
         return LABEL_UNDEFINED
-    
+
 def parse_args():
 
     parser=argparse.ArgumentParser(description="Response mapping",
@@ -93,7 +93,7 @@ def main():
 
     with open(args.answer_path,'r') as f:
         cols = [line.strip() for line in f.readlines()]
-        
+
     for answer_col in cols:
         SUB_FOLDER = os.path.join(args.input_path, answer_col)
 
@@ -101,7 +101,6 @@ def main():
             ANS_COL = f"{answer_col}_{fold}"
             ANS_TF = f"{ANS_COL}_TF"
 
-            logger.info(f"Mapping  {ANS_COL}!!!!!!!!!!!!!!!!!!")
             df = pd.read_csv(get_output_file(SUB_FOLDER, f"{ANS_COL}.csv"))
             df['Label'] = df['Review'].apply(lambda x: 1 if 'YES' in x.upper() else 0)
             df[ANS_TF] = df[ANS_COL].apply(map_text_to_label_cot_string)
