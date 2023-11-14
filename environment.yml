@@ -48,10 +48,6 @@ dependencies:
     - matplotlib==3.6.3
     - multidict==6.0.4
     - numpy==1.24.1
-    - nvidia-cublas-cu11==11.10.3.66
-    - nvidia-cuda-nvrtc-cu11==11.7.99
-    - nvidia-cuda-runtime-cu11==11.7.99
-    - nvidia-cudnn-cu11==8.5.0.96
     - openai==0.27.2
     - packaging==23.0
     - pandas==1.5.3
@@ -70,7 +66,6 @@ dependencies:
     - threadpoolctl==3.1.0
     - tiktoken==0.2.0
     - tokenizers==0.13.2
-    - torch==1.13.1
     - tqdm==4.64.1
     - transformers==4.26.0
     - typing-extensions==4.4.0
