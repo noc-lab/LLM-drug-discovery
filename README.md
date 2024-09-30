@@ -106,14 +106,14 @@ python model/run_few_similar.py --cot 1
 - Ioannis Ch. Paschalidis, Ph.D
 
 ## Cite US
-`@article{yang2024automating,
+```@article{yang2024automating,
   title={Automating biomedical literature review for rapid drug discovery: Leveraging GPT-4 to expedite pandemic response},
   author={Yang, Jingmei and Walker, Kenji C and Bekar-Cesaretli, Ayse A and Hao, Boran and Bhadelia, Nahid and Joseph-McCarthy, Diane and Paschalidis, Ioannis Ch},
   journal={International Journal of Medical Informatics},
   pages={105500},
   year={2024},
   publisher={Elsevier}
-}`
+}```
 
 
 ## License
