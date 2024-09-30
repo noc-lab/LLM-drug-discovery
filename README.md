@@ -113,8 +113,8 @@ python model/run_few_similar.py --cot 1
   pages={105500},
   year={2024},
   publisher={Elsevier}
-}```
-
+}
+```
 
 ## License
 
